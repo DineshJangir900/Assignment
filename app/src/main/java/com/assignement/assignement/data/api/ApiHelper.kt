@@ -3,11 +3,13 @@ package com.assignement.assignement.data.api
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiHelper {
+object ApiHelper {
 
-    fun getRetrofitClient(baseUrl: String): Retrofit {
+    private const val BASE_URL = "https://randomuser.me/"
+
+    fun getRetrofitInstance(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(baseUrl)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
