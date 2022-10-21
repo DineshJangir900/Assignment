@@ -6,5 +6,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "UserDetails")
 data class UserDetailsEntity(
     val requestStatus : String,
-    @PrimaryKey(autoGenerate = false) val id: Int? = null
+    val phone : String,
+    @PrimaryKey(autoGenerate = true) val id: Int? = null
 )

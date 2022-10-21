@@ -1,5 +1,6 @@
 package com.assignement.assignement.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.assignement.assignement.data.api.ApiService
@@ -14,7 +15,9 @@ class HomeScreenRepository(private val apiService: ApiService) {
 
     suspend fun getUsers(userCount : Int){
         val result = apiService.getUsers(userCount)
-        if(result?.body() != null){
+        Log.e("ddd", ""+result.code()+" :: "+result.body());
+        if(result.body() != null){
+            Log.e("ddd2", ""+result.code()+" :: "+result.body());
             val response = result.body()
             usersLiveData.postValue(response!!.results)
         }

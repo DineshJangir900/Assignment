@@ -1,14 +1,15 @@
 package com.assignement.assignement.data.roomDb.dao
 
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Update
+import androidx.room.*
+import com.assignement.assignement.data.roomDb.entity.UserDetailsEntity
 
+@Dao
 interface AssignmentDao {
 
-//    @Insert(onConflict = OnConflictStrategy.REPLACE)
-//    fun insertUserDetails()
-//
-//    @Update
-//    fun update()
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertUserDetails(userRequest: UserDetailsEntity)
+
+
+    @Query("Select * from UserDetails where phone == :phone")
+    fun getUserRequest(phone : String) : UserDetailsEntity
 }

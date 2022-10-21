@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     app:cardUseCompatPadding="true"
-    app:cardElevation="1dp">
-
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="8dp">
+        android:padding="6dp">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -25,12 +23,25 @@
 
 
         <TextView
+            android:id="@+id/location_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="11sp"
+            android:textColor="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawablePadding="4dp"
+            app:drawableStartCompat="@drawable/ic_baseline_my_location_24" />
+
+
+        <TextView
             android:id="@+id/name_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:fontFamily="sans-serif-medium"
-            android:textSize="20sp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="14sp"
             android:text="Dinesh Jangir"
             android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/user_iv"
@@ -41,10 +52,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:fontFamily="sans-serif-medium"
+            android:fontFamily="sans-serif"
             android:text="90000000000"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/user_iv"
             app:layout_constraintTop_toBottomOf="@+id/name_tv" />
 
@@ -53,10 +64,22 @@
             android:id="@+id/dividerView"
             android:layout_width="match_parent"
             android:layout_height="4dp"
+            android:layout_marginTop="6dp"
             android:background="@drawable/dotted_line"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/user_iv" />
+            app:layout_constraintTop_toBottomOf="@+id/age_lbl_tv" />
+
+        <TextView
+            android:id="@+id/msgView"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerView"
+            />
 
         <TextView
             android:id="@+id/accept_tv"
@@ -83,6 +106,103 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/accept_tv"
             app:layout_constraintTop_toBottomOf="@+id/dividerView" />
+
+
+        <TextView
+            android:id="@+id/email_lbl_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_iv" />
+
+
+        <TextView
+            android:id="@+id/email_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif"
+            android:text="john@gmail.com"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/gender_lbl_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/email_lbl_tv" />
+
+
+        <TextView
+            android:id="@+id/gender_lbl_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_tv" />
+
+
+        <TextView
+            android:id="@+id/gender_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:text="Male"
+            app:layout_constraintStart_toEndOf="@+id/gender_lbl_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/gender_lbl_tv" />
+
+
+        <TextView
+            android:id="@+id/dob_lbl_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOB"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gender_lbl_tv" />
+
+
+        <TextView
+            android:id="@+id/dob_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:layout_marginTop="6dp"
+            app:layout_constraintStart_toEndOf="@+id/gender_lbl_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/dob_lbl_tv" />
+
+
+        <TextView
+            android:id="@+id/age_lbl_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dob_tv" />
+
+
+        <TextView
+            android:id="@+id/age_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/black"
+            android:layout_marginTop="6dp"
+            app:layout_constraintStart_toEndOf="@+id/gender_lbl_tv"
+            app:layout_constraintBottom_toBottomOf="@+id/age_lbl_tv" />
+
+
+
+
+        <androidx.constraintlayout.widget.Group
+            android:visibility="gone"
+            android:id="@+id/requestGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="accept_tv,decline_tv"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
